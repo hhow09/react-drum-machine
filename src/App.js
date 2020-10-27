@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from "react";
 import Sequencer from "components/Sequencer";
 import { ProviderSequencer } from "hooks/useSequencer";
-import * as Tone from "tone";
 import SoundSystem from "components/SoundSystem";
+import MainView from "components/MainView";
+import { ProviderMainView } from "hooks/useMainView";
 
 const rootStyle = {
-  width: "100%",
+  width: "800px",
   display: "flex",
   flexDirection: "column",
   justifyContent: "center",
@@ -16,8 +17,11 @@ const App = () => {
     <div style={rootStyle}>
       <h1>Drum Machine</h1>
       <ProviderSequencer>
-        <SoundSystem />
         <Sequencer />
+        <ProviderMainView>
+          <MainView />
+          <SoundSystem />
+        </ProviderMainView>
       </ProviderSequencer>
     </div>
   );

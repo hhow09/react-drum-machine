@@ -1,6 +1,4 @@
 import React, { useState, useRef } from "react";
-import useSequencer from "hooks/useSequencer";
-import useDoubleClick from "hooks/useDoubleClick";
 import {
   stepOnColor,
   stepOnHeavyColor,
@@ -8,12 +6,12 @@ import {
   currAndOnStepColor,
 } from "constants/color";
 const stepStyle = (velocity, isCurrent, index) => ({
-  width: "2vw",
-  height: "2vw",
-  borderRadius: "15px",
-  margin: "0.5vw",
-  marginRight: (index + 1) % 4 === 0 ? "1.4vw" : "0.5vw",
-  border: `1px solid black`,
+  width: "6.25%",
+  height: "10px",
+  // borderRadius: "15px",
+  // margin: "0.5vw",
+  // marginRight: (index + 1) % 4 === 0 ? "1.4vw" : "0.5vw",
+  boxShadow: "1px 1px 1px #9E9E9E",
   backgroundColor:
     isCurrent && velocity > 0
       ? currAndOnStepColor
@@ -23,27 +21,10 @@ const stepStyle = (velocity, isCurrent, index) => ({
       ? stepOnHeavyColor
       : velocity > 0
       ? stepOnColor
-      : "white",
+      : "transparent",
 });
 
-const Step = ({
-  index,
-  velocity,
-  handleClick,
-  isCurrent,
-  handleDoubleClick,
-}) => {
-  const stepRef = useRef();
-
-  useDoubleClick({
-    onSingleClick: handleClick,
-    onDoubleClick: handleDoubleClick,
-    ref: stepRef,
-    latency: 250,
-  });
-
-  return (
-    <div ref={stepRef} style={stepStyle(velocity, isCurrent, index)}></div>
-  );
+const Step = ({ index, velocity, isCurrent }) => {
+  return <div style={stepStyle(velocity, isCurrent, index)}></div>;
 };
 export default Step;

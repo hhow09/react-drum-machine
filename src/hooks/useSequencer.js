@@ -20,6 +20,7 @@ const useSequencerProvider = () => {
   }));
   const [stepLists, setStepLists] = useImmer(defaultStepLists);
   const [currentStep, setCurrentStep] = useState(0);
+  const [selectInst, setSelectInst] = useState(0);
   const updateStep = (rowIndex, stepIndex, velocity) => {
     setStepLists((prevState) => {
       prevState[rowIndex].stepList[stepIndex] = velocity;
@@ -35,5 +36,7 @@ const useSequencerProvider = () => {
     currentStep,
     setCurrentStep,
     resetSteps,
+    selectInst,
+    setSelectInst,
   };
 };

@@ -1,17 +1,24 @@
 {
   "files": {
-    "main.css": "https://hhow09.github.io/react-drum-machine/static/css/main.1359096b.chunk.css",
-    "main.js": "https://hhow09.github.io/react-drum-machine/static/js/main.3f46ec2b.chunk.js",
-    "runtime-main.js": "https://hhow09.github.io/react-drum-machine/static/js/runtime-main.ae5e217f.js",
-    "static/js/2.87b5d8e1.chunk.js": "https://hhow09.github.io/react-drum-machine/static/js/2.87b5d8e1.chunk.js",
-    "static/js/3.96a091a8.chunk.js": "https://hhow09.github.io/react-drum-machine/static/js/3.96a091a8.chunk.js",
+    "main.css": "https://hhow09.github.io/react-drum-machine/static/css/main.7c91ddb9.chunk.css",
+    "main.js": "https://hhow09.github.io/react-drum-machine/static/js/main.1617e6b3.chunk.js",
+    "runtime-main.js": "https://hhow09.github.io/react-drum-machine/static/js/runtime-main.fdbaed49.js",
+    "static/css/2.cf67563f.chunk.css": "https://hhow09.github.io/react-drum-machine/static/css/2.cf67563f.chunk.css",
+    "static/js/2.ea28bd10.chunk.js": "https://hhow09.github.io/react-drum-machine/static/js/2.ea28bd10.chunk.js",
+    "static/js/3.6939425b.chunk.js": "https://hhow09.github.io/react-drum-machine/static/js/3.6939425b.chunk.js",
     "index.html": "https://hhow09.github.io/react-drum-machine/index.html",
-    "static/js/2.87b5d8e1.chunk.js.LICENSE.txt": "https://hhow09.github.io/react-drum-machine/static/js/2.87b5d8e1.chunk.js.LICENSE.txt"
+    "static/js/2.ea28bd10.chunk.js.LICENSE.txt": "https://hhow09.github.io/react-drum-machine/static/js/2.ea28bd10.chunk.js.LICENSE.txt",
+    "static/media/next.4a867727.svg": "https://hhow09.github.io/react-drum-machine/static/media/next.4a867727.svg",
+    "static/media/play.1b4fe477.svg": "https://hhow09.github.io/react-drum-machine/static/media/play.1b4fe477.svg",
+    "static/media/prev.059d5327.svg": "https://hhow09.github.io/react-drum-machine/static/media/prev.059d5327.svg",
+    "static/media/reset.53fc7500.svg": "https://hhow09.github.io/react-drum-machine/static/media/reset.53fc7500.svg",
+    "static/media/stop.11946cce.svg": "https://hhow09.github.io/react-drum-machine/static/media/stop.11946cce.svg"
   },
   "entrypoints": [
-    "static/js/runtime-main.ae5e217f.js",
-    "static/js/2.87b5d8e1.chunk.js",
-    "static/css/main.1359096b.chunk.css",
-    "static/js/main.3f46ec2b.chunk.js"
+    "static/js/runtime-main.fdbaed49.js",
+    "static/css/2.cf67563f.chunk.css",
+    "static/js/2.ea28bd10.chunk.js",
+    "static/css/main.7c91ddb9.chunk.css",
+    "static/js/main.1617e6b3.chunk.js"
   ]
 }

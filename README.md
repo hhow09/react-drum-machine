@@ -1,4 +1,6 @@
-A Drum Machine Made with React,tone.js
+A Javascript Drum Machine Made with React,[tone.js](https://tonejs.github.io/)
+
+[demo](https://hhow09.github.io/react-drum-machine/)
 
 install
 

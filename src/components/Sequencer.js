@@ -1,10 +1,22 @@
 import React from "react";
 import useSequencer from "hooks/useSequencer";
 import Step from "components/basic/Step";
+import { greyColor } from "constants/color";
 
-const rowStyle = { display: "flex", width: "100%" };
-const rootStyle = { position: "relative" };
-const titleStyle = { width: "50px" };
+const rootStyle = {
+  position: "relative",
+  width: "70vw",
+  minWidth: "400px",
+  maxWidth: "500px",
+  backgroundColor: greyColor,
+};
+const rowStyle = {
+  display: "flex",
+  width: "100%",
+  justifyContent: "center",
+  alignItems: "center",
+};
+
 const Sequencer = () => {
   const { stepLists, updateStep, currentStep } = useSequencer();
 
@@ -13,7 +25,6 @@ const Sequencer = () => {
       {/* <div style={stepIndicatorStyle(step)} /> */}
       {stepLists.map((el, rowIndex) => (
         <div style={rowStyle} key={rowIndex}>
-          <div style={titleStyle}>{el.name}</div>
           {el.stepList.map((velocity, index) => (
             <Step
               key={index}

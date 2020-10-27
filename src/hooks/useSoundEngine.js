@@ -4,12 +4,14 @@ import * as Tone from "tone";
 import Kick from "engines/kick";
 import Snare from "engines/snare";
 import useSequencer from "hooks/useSequencer";
+import useMainView from "hooks/useMainView";
 
 const useSoundEngine = ({ bpm }) => {
+  const { volumns } = useMainView();
   Tone.Transport.bpm.value = bpm;
   const { stepLists, setCurrentStep } = useSequencer();
-  const { trigger: kickTrigger } = useMemo(() => Kick(), []);
-  const { trigger: snareTrigger } = useMemo(() => Snare(), []);
+  const { trigger: kickTrigger } = Kick({ volumn: volumns[0] });
+  const { trigger: snareTrigger } = Snare({ volumn: volumns[1] });
   const [loop, setLoop] = useImmer([]);
 
   const updateLoop = () => {
@@ -28,7 +30,6 @@ const useSoundEngine = ({ bpm }) => {
                   time + stepIndex * Tone.Time("16n").toSeconds(),
                   velocity
                 );
-
               Tone.Draw.schedule(() => {
                 setCurrentStep(stepIndex);
               }, time + stepIndex * Tone.Time("16n").toSeconds());
@@ -38,12 +39,13 @@ const useSoundEngine = ({ bpm }) => {
         case "1":
           scheduleIdx = Tone.Transport.schedule((time) => {
             stepLists[idx].stepList.forEach((velocity, stepIndex) => {
-              if (velocity)
+              if (velocity) {
                 snareTrigger(
                   "16n",
                   time + stepIndex * Tone.Time("16n").toSeconds(),
                   velocity
                 );
+              }
             });
           }, "0");
         default:
