@@ -9,7 +9,8 @@ import useMD from "hooks/useMD";
 import githubIcon from "assets/svg/github.svg";
 
 const rootStyle = {
-  width: "800px",
+  width: "90%",
+  maxWidth: "800px",
   display: "flex",
   flexDirection: "column",
   justifyContent: "center",
