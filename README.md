@@ -39,4 +39,4 @@ yarn start
 #### Reference
 
 - [tone.js](https://tonejs.github.io/)
-- [colour palettes of vintage drum machines]()
+- [colour palettes of vintage drum machines](https://github.com/hhow09/react-drum-machine/tree/master/src/assets/color%20ref)

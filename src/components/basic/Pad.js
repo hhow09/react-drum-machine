@@ -1,10 +1,11 @@
 import React, { useState, useRef } from "react";
 import useDoubleClick from "hooks/useDoubleClick";
-import { stepOnColor, stepOnHeavyColor } from "constants/color";
+import { stepOnColor, stepOnHeavyColor, shadowColor } from "constants/color";
 const rootStyle = (velocity) => ({
   width: "24%",
   height: "24%",
-  boxShadow: "1px 1px 1px #9E9E9E",
+  boxShadow: `1px 1px 1px ${shadowColor}`,
+
   flexShrink: "1",
   flexGrow: "1",
   backgroundColor:

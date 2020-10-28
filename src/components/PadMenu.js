@@ -1,7 +1,7 @@
 import React, { useState, useRef } from "react";
 import { instrumentList } from "constants/instruments";
 import useSequencer from "hooks/useSequencer";
-import { orangeColor, blackColor } from "constants/color";
+import { orangeColor, blackColor, shadowColor } from "constants/color";
 const padMenuStyle = {
   width: "100px",
   height: "100%",
@@ -9,7 +9,7 @@ const padMenuStyle = {
 };
 const menuItemStyle = (selected) => ({
   height: "30px",
-  boxShadow: "1px 1px 1px #9E9E9E",
+  boxShadow: `1px 1px 1px ${shadowColor}`,
   display: "flex",
   justifyContent: "center",
   alignItems: "center",

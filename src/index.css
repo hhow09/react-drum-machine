@@ -24,4 +24,7 @@ code {
 
 .readme {
   font-family: "Courier New Bold";
+  margin-top: 20px;
+  padding: 20px;
+  border: 2px solid black;
 }

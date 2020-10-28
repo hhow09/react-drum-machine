@@ -1,13 +1,14 @@
 {
   "files": {
-    "main.css": "https://hhow09.github.io/react-drum-machine/static/css/main.f647cc98.chunk.css",
-    "main.js": "https://hhow09.github.io/react-drum-machine/static/js/main.671a38ed.chunk.js",
+    "main.css": "https://hhow09.github.io/react-drum-machine/static/css/main.8414e412.chunk.css",
+    "main.js": "https://hhow09.github.io/react-drum-machine/static/js/main.6a98e138.chunk.js",
     "runtime-main.js": "https://hhow09.github.io/react-drum-machine/static/js/runtime-main.f9042b9b.js",
     "static/css/2.cf67563f.chunk.css": "https://hhow09.github.io/react-drum-machine/static/css/2.cf67563f.chunk.css",
     "static/js/2.65ab264d.chunk.js": "https://hhow09.github.io/react-drum-machine/static/js/2.65ab264d.chunk.js",
     "static/js/3.bd23e147.chunk.js": "https://hhow09.github.io/react-drum-machine/static/js/3.bd23e147.chunk.js",
     "index.html": "https://hhow09.github.io/react-drum-machine/index.html",
     "static/js/2.65ab264d.chunk.js.LICENSE.txt": "https://hhow09.github.io/react-drum-machine/static/js/2.65ab264d.chunk.js.LICENSE.txt",
+    "static/media/github.04be58c1.svg": "https://hhow09.github.io/react-drum-machine/static/media/github.04be58c1.svg",
     "static/media/next.4a867727.svg": "https://hhow09.github.io/react-drum-machine/static/media/next.4a867727.svg",
     "static/media/play.1b4fe477.svg": "https://hhow09.github.io/react-drum-machine/static/media/play.1b4fe477.svg",
     "static/media/prev.059d5327.svg": "https://hhow09.github.io/react-drum-machine/static/media/prev.059d5327.svg",
@@ -20,7 +21,7 @@
     "static/js/runtime-main.f9042b9b.js",
     "static/css/2.cf67563f.chunk.css",
     "static/js/2.65ab264d.chunk.js",
-    "static/css/main.f647cc98.chunk.css",
-    "static/js/main.671a38ed.chunk.js"
+    "static/css/main.8414e412.chunk.css",
+    "static/js/main.6a98e138.chunk.js"
   ]
 }

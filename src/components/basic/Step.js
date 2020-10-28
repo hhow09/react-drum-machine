@@ -4,14 +4,12 @@ import {
   stepOnHeavyColor,
   currStepColor,
   currAndOnStepColor,
+  shadowColor,
 } from "constants/color";
 const stepStyle = (velocity, isCurrent, index) => ({
   width: "6.25%",
   height: "10px",
-  // borderRadius: "15px",
-  // margin: "0.5vw",
-  // marginRight: (index + 1) % 4 === 0 ? "1.4vw" : "0.5vw",
-  boxShadow: "1px 1px 1px #9E9E9E",
+  boxShadow: `1px 1px 1px ${shadowColor}`,
   backgroundColor:
     isCurrent && velocity > 0
       ? currAndOnStepColor
@@ -25,6 +23,6 @@ const stepStyle = (velocity, isCurrent, index) => ({
 });
 
 const Step = ({ index, velocity, isCurrent }) => {
-  return <div style={stepStyle(velocity, isCurrent, index)}></div>;
+  return <div style={stepStyle(velocity, isCurrent, index)} />;
 };
 export default Step;

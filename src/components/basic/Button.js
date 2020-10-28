@@ -1,9 +1,11 @@
 import React, { useState, useRef } from "react";
+import { shadowColor } from "constants/color";
 const buttonStyle = {
   width: "30px",
   height: "30px",
   border: "none",
-  borderRadius: "50%",
+  borderRadius: "20%",
+  boxShadow: `1px 1px 1px ${shadowColor}`,
   display: "flex",
   justifyContent: "center",
   alignItems: "center",

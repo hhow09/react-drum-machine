@@ -19,6 +19,7 @@ import prevSvg from "assets/svg/prev.svg";
 const rootStyle = {
   display: "flex",
   alignItems: "center",
+  justifyContent: "space-between",
   width: "70vw",
   height: "50px",
   minWidth: "400px",
@@ -29,6 +30,10 @@ const rootStyle = {
 };
 
 const btnStyle = {
+  marginRight: "10px",
+};
+const btnStyleFst = {
+  marginLeft: "10px",
   marginRight: "10px",
 };
 
@@ -99,9 +104,9 @@ const SoundSystem = () => {
           />
         }
         overlayInnerStyle={overlayInnerStyle}
-        placement="bottom"
+        placement="left"
       >
-        <div style={btnStyle}>
+        <div style={btnStyleFst}>
           <RetroHitCounter
             hits={bpm}
             withBorder={false}
