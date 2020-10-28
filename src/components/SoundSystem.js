@@ -12,11 +12,13 @@ import { greyColor } from "constants/color";
 import playSvg from "assets/svg/play.svg";
 import stopSvg from "assets/svg/stop.svg";
 import resetSvg from "assets/svg/reset.svg";
+import randomSvg from "assets/svg/random.svg";
 import nextSvg from "assets/svg/next.svg";
 import prevSvg from "assets/svg/prev.svg";
 
 const rootStyle = {
   display: "flex",
+  alignItems: "center",
   width: "70vw",
   height: "50px",
   minWidth: "400px",
@@ -24,6 +26,10 @@ const rootStyle = {
   maxHeight: "50px",
   overflow: "scroll",
   backgroundColor: greyColor,
+};
+
+const btnStyle = {
+  marginRight: "10px",
 };
 
 const customInputStyle = {
@@ -35,6 +41,13 @@ const customInputStyle = {
   outlineOffset: "none",
 };
 
+const viewLabelStyle = {
+  width: "120px",
+  textAlign: "right",
+  marginRight: "10px",
+  fontSize: "20px",
+};
+
 const overlayInnerStyle = { backgroundColor: "transparent" };
 
 const bpmRange = [20, 200];
@@ -43,7 +56,7 @@ const SoundSystem = () => {
   const [bpm, setBpm] = useState(90);
   const [showBPM, setShowBPM] = useState(false);
   const { now } = useSoundEngine({ bpm });
-  const { resetSteps } = useSequencer();
+  const { genRandomSteps, resetSteps } = useSequencer();
   const {
     currViewName,
     currViewHint,
@@ -52,7 +65,7 @@ const SoundSystem = () => {
     hasNext,
     hasPrev,
   } = useMainView();
-
+  //TODO change theme
   const handleBpmChange = (e) => {
     const valueNum = parseFloat(e.target.value);
 
@@ -88,7 +101,7 @@ const SoundSystem = () => {
         overlayInnerStyle={overlayInnerStyle}
         placement="bottom"
       >
-        <div>
+        <div style={btnStyle}>
           <RetroHitCounter
             hits={bpm}
             withBorder={false}
@@ -105,48 +118,79 @@ const SoundSystem = () => {
           />
         </div>
       </Tooltip>
-      <Button
-        onClick={() => {
-          Tone.start();
-          Tone.Transport.start();
-        }}
-      >
-        <img src={playSvg} alt="play" width="15px" />
-      </Button>
-      <Button
-        onClick={() => {
-          Tone.Transport.pause();
-        }}
-      >
-        <img src={stopSvg} alt="Stop" width="15px" />
-      </Button>
-      <Button
-        onClick={() => {
-          resetSteps();
-        }}
-      >
-        <img src={resetSvg} alt="Reset" width="15px" />
-      </Button>
-      {hasPrev && (
-        <Button
-          onClick={() => {
-            mainViewPrev();
-          }}
-        >
-          <img src={prevSvg} alt="prevView" width="15px" />
-        </Button>
-      )}
-      {hasNext && (
-        <Button
-          onClick={() => {
-            mainViewNext();
-          }}
-        >
-          <img src={nextSvg} alt="nextView" width="15px" />
-        </Button>
-      )}
+      <Tooltip overlay="Play" placement="bottom">
+        <div style={btnStyle}>
+          <Button
+            onClick={() => {
+              Tone.start();
+              Tone.Transport.start();
+            }}
+          >
+            <img src={playSvg} alt="play" width="15px" />
+          </Button>
+        </div>
+      </Tooltip>
+      <Tooltip overlay="Stop" placement="bottom">
+        <div style={btnStyle}>
+          <Button
+            onClick={() => {
+              Tone.Transport.pause();
+            }}
+          >
+            <img src={stopSvg} alt="Stop" width="15px" />
+          </Button>
+        </div>
+      </Tooltip>
+      <Tooltip overlay="Reset" placement="bottom">
+        <div style={btnStyle}>
+          <Button
+            onClick={() => {
+              resetSteps();
+            }}
+          >
+            <img src={resetSvg} alt="Reset" width="15px" />
+          </Button>
+        </div>
+      </Tooltip>
+      <Tooltip overlay="Generate Random Pattern" placement="bottom">
+        <div style={btnStyle}>
+          <Button
+            onClick={(e) => {
+              genRandomSteps();
+            }}
+          >
+            <img src={randomSvg} alt="RandomSteps" width="15px" />
+          </Button>
+        </div>
+      </Tooltip>
+      <div style={btnStyle}>
+        {hasPrev && (
+          <Tooltip overlay="Previous View" placement="bottom">
+            <Button
+              onClick={() => {
+                mainViewPrev();
+              }}
+            >
+              <img src={prevSvg} alt="prevView" width="15px" />
+            </Button>
+          </Tooltip>
+        )}
+      </div>
+      <div style={btnStyle}>
+        {hasNext && (
+          <Tooltip overlay="Next View" placement="bottom">
+            <Button
+              onClick={() => {
+                mainViewNext();
+              }}
+            >
+              <img src={nextSvg} alt="nextView" width="15px" />
+            </Button>
+          </Tooltip>
+        )}
+      </div>
       <Tooltip overlay={currViewHint} placement="bottom">
-        <div>{currViewName}</div>
+        <div style={viewLabelStyle}>{currViewName}</div>
       </Tooltip>
     </div>
   );

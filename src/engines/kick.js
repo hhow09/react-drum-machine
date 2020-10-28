@@ -6,7 +6,7 @@ const Kick = ({ volumn }) => {
   synth.volume.value = volumn;
 
   const trigger = useCallback((duration, time, velocity) => {
-    synth.triggerAttackRelease("C2", duration, time, velocity);
+    synth.triggerAttackRelease("G1", duration, time, velocity);
   }, []);
   return { trigger };
 };

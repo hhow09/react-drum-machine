@@ -1,11 +1,11 @@
 import React, { useState, useRef } from "react";
 import { instrumentList } from "constants/instruments";
 import useSequencer from "hooks/useSequencer";
-import { orangeColor } from "constants/color";
+import { orangeColor, blackColor } from "constants/color";
 const padMenuStyle = {
   width: "100px",
   height: "100%",
-  borderLeft: "2px solid black",
+  borderLeft: `1px solid ${blackColor}`,
 };
 const menuItemStyle = (selected) => ({
   height: "30px",
@@ -14,7 +14,8 @@ const menuItemStyle = (selected) => ({
   justifyContent: "center",
   alignItems: "center",
   cursor: "pointer",
-  color: selected ? orangeColor : "black",
+  color: selected ? orangeColor : blackColor,
+  backgroundColor: selected ? blackColor : "transparent",
   fontWeight: selected ? 900 : 400,
 });
 const PadMenu = () => {
@@ -23,6 +24,7 @@ const PadMenu = () => {
     <div style={padMenuStyle}>
       {instrumentList.map((el, idx) => (
         <MenuItem
+          key={idx}
           onClick={() => {
             setSelectInst(idx);
           }}

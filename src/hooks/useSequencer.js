@@ -29,7 +29,15 @@ const useSequencerProvider = () => {
   const resetSteps = () => {
     setStepLists(() => defaultStepLists);
   };
-
+  const genRandomSteps = () => {
+    setStepLists((prevState) => {
+      for (let el of prevState) {
+        el.stepList = randomArr(stepNum);
+      }
+    });
+  };
+  //TODO active step sq-1
+  //TODO play direction 改變drumpad播放的方向
   return {
     stepLists,
     updateStep,
@@ -38,5 +46,12 @@ const useSequencerProvider = () => {
     resetSteps,
     selectInst,
     setSelectInst,
+    genRandomSteps,
   };
+};
+
+const randomArr = (length = 0) => {
+  return Array.from({ length }, () =>
+    Math.random() >= 0.8 ? Math.random() : 0
+  );
 };

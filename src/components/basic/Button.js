@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 const buttonStyle = {
   width: "30px",
   height: "30px",
@@ -12,8 +12,13 @@ const buttonStyle = {
   outlineOffset: "none",
 };
 const Button = ({ children, onClick, ...props }) => {
+  const ref = useRef();
+  const handleClick = (e) => {
+    ref.current.blur();
+    onClick();
+  };
   return (
-    <button style={buttonStyle} onClick={onClick} {...props}>
+    <button ref={ref} style={buttonStyle} onClick={handleClick} {...props}>
       {children}
     </button>
   );
