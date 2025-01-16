@@ -1,42 +1,45 @@
-A Javascript Drum Machine Made with React & tone.js
+# A Javascript Drum Machine Made with React & tone.js
 
-[Demo](https://hhow09.github.io/react-drum-machine/)
+Live Link: https://hhow09.github.io/react-drum-machine/
 
-install
+![Animation](./animation.gif)
 
-```bash
-yarn install
-```
+## Instruction
 
-dev
-
-```bash
-yarn start
-```
-
-### Instruction
-
-#### Sound System
+### Sound System
 
 - Click 'Play' or 'Spacebar' to start drum loop.
 - Click 'Stop' or 'Spacebar' to stop drum loop.
 - Click 'Reset' to clear drum patterns.
 - Click 'Random' to generate random patterns
 
-#### DrumPad
+### DrumPad
 
 - Click on 4x4 pads to create drum pattern.
 - Single-click for normal hit (velocity=0.8).
 - Double-click for accentuation (velocity=1).
 - Change Instrument on the right side menu.
 
-#### Mixer
+### Mixer
 
 - Adjust the volumn with mouse click on the height
 - volume unit: dB
 - Click 'Reset' on top-right to reset volumnes to 0 dB.
 
-#### Reference
+## Development
+### install
+
+```bash
+yarn install
+```
+
+### dev
+
+```bash
+yarn start
+```
+
+## Reference
 
 - [tone.js](https://tonejs.github.io/)
 - [colour palettes of vintage drum machines](https://github.com/hhow09/react-drum-machine/tree/master/src/assets/color%20ref)
